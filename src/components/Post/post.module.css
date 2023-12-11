@@ -1,0 +1,8 @@
+.postContainer {
+  background: rgb(243, 205, 205);
+  color: rgb(136, 136, 200);
+}
+
+.marked {
+  background: yellow;
+}
