@@ -1,24 +1,3 @@
-export const Post1 = (props) => {
-const { title, description } = props
-
-return (
-
-<div style={{ width: '400px', backgroundColor: 'green' }}>
-<h1>{title}</h1>
-<p>{description}</p>
-</div>
-)
-}
-
-const Post2 = (props) => {
-return (
-
-<div>
-<h1>{props.title}</h1>
-<p>{props.description}</p>
-</div>
-)
-}
 // default может быть только один в файле
 // могу переименовать при импорте
 
@@ -40,3 +19,12 @@ return (
 // МЫ НЕ МОЖЕМ МЕНЯТЬ СОСТОЯНИЕ НАПРЯМУЮ
 // изменяем состояние через функцию set
 // React отслеживает изменение переменной и перерендр компонент
+
+// значение состояние может быть любым типом данных
+// строка число бул объект массив
+// в initState можем передать функцию
+// null
+
+// все вычисления до return
+// return возвращает всегда один элемент HTML
+// не просто id а ключ элемента в списке
