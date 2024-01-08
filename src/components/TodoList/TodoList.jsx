@@ -1,15 +1,10 @@
 import { Todo } from '../Todo/Todo'
-import { todos } from '../../utils/toDos'
 
-export const TodoList = () => {
-  const changeDoneFlagHandler = () => {
-    console.log('click')
-  }
-
+export const TodoList = ({ todoList }) => {
   return (
     <div>
-      {todos.map((todo) => (
-        <Todo key={todo.id} {...todo} changeDoneFlagHandler={changeDoneFlagHandler} />
+      {todoList.map((todo) => (
+        <Todo key={todo.id} {...todo} />
       ))}
     </div>
   )
