@@ -1,14 +1,8 @@
-import classes from './post.module.css'
-import { changeColor } from '../../utils/changeColor'
-import { useState } from 'react'
-
-export const Post = ({ title, text, marked, img, changeMarkedHandler }) => {
+export const Post = ({ title, body }) => {
   return (
-    <div className={marked ? classes.marked : classes.postContainer}>
+    <div>
       <h1>{title}</h1>
-      <p>{text}</p>
-      <img src={img} alt="" />
-      <button onClick={changeMarkedHandler}>Marked</button>
+      <p>{body}</p>
     </div>
   )
 }
