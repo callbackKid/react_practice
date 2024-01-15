@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { UserList } from '../components/UserList/UserList'
+import { React, useEffect, useState } from 'react'
 import { AddNewUser } from '../components/AddNewUser/AddNewUser'
+import { UserList } from '../components/UserList/UserList'
 
 const UserPage = () => {
   const [userList, setUserList] = useState([])

@@ -8,9 +8,9 @@ export const Header = () => {
           <li>
             <NavLink to="/todos">Todos</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/posts">Posts</NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink to="/users">Users</NavLink>
           </li>
