@@ -40,3 +40,12 @@ sf 4
 // передаем в TodoList пропс
 // создаем отдельный компонент AddNewTodo в котором реализовываем логику добавления
 // как сделали с user
+
+// const context = useContext(ApiContext)
+// const posts = context.posts
+// 6 и 7 вместе
+// console.log('context: ', context)
+// const posts = context.posts
+// const handlePostedData = context.handlePostedData
+
+// const { posts, handlePostedData } = context

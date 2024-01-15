@@ -34,3 +34,17 @@ export const addPost = async (post) => {
     console.log(error)
   }
 }
+
+export const deletePost = async (id) => {
+  try {
+    const response = await fetch(`https://dummyjson.com/posts/${id}`, {
+      method: 'DELETE',
+    })
+    if (!response.ok) throw new Error('Не удалось удалить пост')
+    const data = await response.json()
+    console.log(data)
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}
