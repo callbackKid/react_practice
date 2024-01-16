@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
+import { AddNewPost } from '../components/AddNewPost/AddNewPost'
 import { Post } from '../components/Post/Post'
 import { ApiContext } from '../contexts'
-import { AddNewPost } from './components/AddNewPost/AddNewPost'
-import { addPost, deletePost, getPosts } from './requests'
+import { addPost, deletePost, getPosts } from '../requests'
 
-export const PostPage = () => {
+const PostPage = () => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
@@ -36,3 +36,5 @@ export const PostPage = () => {
     </ApiContext.Provider>
   )
 }
+
+export default PostPage

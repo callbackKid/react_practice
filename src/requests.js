@@ -14,11 +14,6 @@ export const getPosts = async (setPosts) => {
   }
 }
 
-// Создать функции
-// экспортировать ее
-// написать используя async await
-// добавить обработку ошибок
-
 export const addPost = async (post) => {
   try {
     const response = await fetch('https://dummyjson.com/posts/add', {
