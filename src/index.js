@@ -5,6 +5,7 @@ import App from './App'
 import './index.css'
 import ErrorPage from './pages/ErrorPage'
 import PostPage from './pages/PostPage'
+import SingleUserPage from './pages/SingleUserPage'
 import TodosPage from './pages/TodosPage'
 import UserPage from './pages/UserPage'
 
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/users',
         element: <UserPage />,
+      },
+      {
+        path: '/users/:id',
+        element: <SingleUserPage />,
       },
     ],
   },
