@@ -3,7 +3,7 @@ import { ApiContext } from '../../contexts'
 
 export const Post = ({ id, title, body }) => {
   const { handleDeletedPost } = useContext(ApiContext)
-  console.log(handleDeletedPost)
+
   return (
     <div>
       <h1>{title}</h1>

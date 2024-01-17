@@ -11,7 +11,12 @@ const SingleUserPage = () => {
   }, [id])
 
   console.log(user)
-  return <div>{user && user.firstName}</div>
+  return (
+    <div>
+      {user && user.firstName}
+      <p>{user ? user.lastName : <h1>LOADING</h1>}</p>
+    </div>
+  )
 }
 
 export default SingleUserPage

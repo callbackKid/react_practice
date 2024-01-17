@@ -1,9 +1,17 @@
 import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { v4 as uuidv4 } from 'uuid'
 
 export const AddNewUser = ({ addUserToList }) => {
   const [firstName, setFirstName] = useState('')
   const [age, setAge] = useState('')
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
 
   const handleAddUser = (event) => {
     event.preventDefault()
