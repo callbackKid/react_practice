@@ -1,51 +1,38 @@
-import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { v4 as uuidv4 } from 'uuid'
 
 export const AddNewUser = ({ addUserToList }) => {
-  const [firstName, setFirstName] = useState('')
-  const [age, setAge] = useState('')
-
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors },
-  } = useForm()
+  } = useForm({ defaultValues: { firstName: '', age: '' } })
 
-  const handleAddUser = (event) => {
-    event.preventDefault()
+  // хранит себе value инпута
+  // const watchAge = watch()
 
+  const handleAddUser = (data) => {
     const newUser = {
-      firstName: firstName,
-      age: age,
+      ...data,
       id: uuidv4(),
     }
 
     addUserToList(newUser)
-    setFirstName('')
-    setAge('')
+
+    reset()
   }
 
   return (
-    <form onSubmit={handleAddUser}>
+    <form onSubmit={handleSubmit(handleAddUser)}>
       <label>
         First Name
-        <input
-          type="text"
-          id="name"
-          value={firstName}
-          onChange={(event) => setFirstName(event.target.value)}
-        />
+        <input type="text" id="name" {...register('firstName')} />
       </label>
       <label>
         Age
-        <input
-          type="number"
-          id="age"
-          value={age}
-          onChange={(event) => setAge(event.target.value)}
-        />
+        <input type="number" id="age" {...register('age')} />
       </label>
       <button type="submit">Add User</button>
     </form>
