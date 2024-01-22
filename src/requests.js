@@ -9,12 +9,12 @@ export const getPosts = async (setPosts) => {
   }
 }
 
-export const addPost = async (post) => {
+export const addPost = async (dataFromForm) => {
   try {
     const response = await fetch('https://dummyjson.com/posts/add', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(post),
+      body: JSON.stringify(dataFromForm),
     })
     if (!response.ok) throw new Error('Не удалось добавить пост')
     const postData = await response.json()
