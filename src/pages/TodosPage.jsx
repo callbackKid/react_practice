@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
-import { todos } from '../utils/toDos'
-import { TodoList } from '../components/TodoList/TodoList'
+import React from 'react'
 import { AddNewTodo } from '../components/AddNewTodo/AddNewTodo'
+import { TodoList } from '../components/TodoList/TodoList'
 
 const TodosPage = () => {
-  const [todoList, setTodoList] = useState(todos)
   return (
     <div>
       <AddNewTodo />
-      <TodoList todoList={todoList} />
+      <TodoList />
     </div>
   )
 }
