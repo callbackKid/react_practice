@@ -2,8 +2,7 @@ import { useSelector } from 'react-redux'
 import { Todo } from '../Todo/Todo'
 
 export const TodoList = () => {
-  const todoList = useSelector((state) => state.todos)
-  console.log(todoList)
+  const todoList = useSelector((state) => state.todos.todos)
   return (
     <div>
       {todoList.map((todo) => (

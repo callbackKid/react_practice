@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { changeTodo, deleteTodo } from '../../store/todoSlice'
 
-export const Todo = ({ taskTitle, taskDescription, doneFlag, changeDoneFlagHandler }) => {
-  // переписать таким образом копмоненты Todo, TodoList
-  // чтобы состояние у Todo менялось внутри TodoList
-  // по принципу с Post
-  // передать функцию в качестве пропса
-  // реалитзовать функционал внутри TodoList
-  //  в браузере
+export const Todo = ({ id, taskTitle, taskDescription, doneFlag }) => {
+  const dispatch = useDispatch()
   return (
     <div style={{ textDecoration: doneFlag ? 'line-through' : 'none' }}>
       <h1>{taskTitle}</h1>
       <p>{taskDescription}</p>
-      <button onClick={changeDoneFlagHandler}>toggle</button>
+      <button onClick={() => dispatch(changeTodo(id))}>toggle</button>
+      <button onClick={() => dispatch(deleteTodo(id))}>delete</button>
     </div>
   )
 }
