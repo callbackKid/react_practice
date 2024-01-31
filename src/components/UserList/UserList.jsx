@@ -30,31 +30,3 @@ export const UserList = ({ userList }) => {
     </div>
   )
 }
-
-export const UserList1 = ({ userList }) => {
-  const dispatch = useDispatch()
-
-  const handleAddUser = (event, user) => {
-    event.preventDefault()
-    dispatch(addFriend(user))
-
-    const handleDeleteUser = (event) => {
-      event.preventDefault()
-      dispatch(deleteFriend())
-      console.log('delete')
-    }
-    return (
-      <div>
-        {userList.map((user) => (
-          <Link to={`/users/${user.id}`} key={user.id}>
-            <User
-              {...user}
-              handleAddUser={(event) => handleAddUser(event, user)}
-              handleDeleteUser={(event) => handleDeleteUser(event)}
-            />
-          </Link>
-        ))}
-      </div>
-    )
-  }
-}
