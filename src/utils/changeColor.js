@@ -7,8 +7,3 @@ export const changeColor = () => {
 
   return `rgb(${red}, ${green}, ${blue})`
 }
-
-console.log(changeColor())
-console.log(changeColor())
-console.log(changeColor())
-console.log(changeColor())

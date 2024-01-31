@@ -133,3 +133,13 @@ import counterReducer from './counterSlice'
 
 // configureStore заменяет createStore - принимает в себя объект с ключом reducer
 export const store = configureStore({ reducer: counterReducer })
+
+RTK
+
+1. Создать небольшое приложение, которое будет менять и сбрасывать цвет заднего фото
+2. Создавать приложение которое меняет тему приложения
+3. Есть список пользователей, создаем функционал добавления пользователей в друзья
+
+2) создаем файл colorSlice
+3) создать initialState {color: #ffffff}
+4) создать slice --> createSlice
