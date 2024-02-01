@@ -46,7 +46,7 @@ export const AddNewUser = ({ addUserToList }) => {
           type="number"
           id="age"
           {...register('age', {
-            required: true,
+            required: 'поле обязательно',
             min: {
               value: 18,
               message: 'Пользователь должен быть старше 18',
@@ -82,6 +82,20 @@ export const AddNewUser = ({ addUserToList }) => {
           type="email"
           id="email"
           {...register('email', {
+            required: true,
+            pattern: {
+              value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}/g,
+              message: 'Вы должны ввести правильный email с @',
+            },
+          })}
+        />
+      </label>
+      <label>
+        Password
+        <input
+          type="password"
+          id="password"
+          {...register('password', {
             required: true,
             pattern: {
               value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}/g,
