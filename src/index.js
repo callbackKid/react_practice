@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App'
 import './index.css'
 import ErrorPage from './pages/ErrorPage'
-import PostPage from './pages/PostPage'
+import PostsPage from './pages/PostsPage'
 import SingleUserPage from './pages/SingleUserPage'
 import TodosPage from './pages/TodosPage'
 import UserPage from './pages/UserPage'
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/posts',
-        element: <PostPage />,
+        element: <PostsPage />,
       },
       {
         path: '/users',

@@ -143,3 +143,11 @@ RTK
 2) создаем файл colorSlice
 3) создать initialState {color: #ffffff}
 4) создать slice --> createSlice
+
+// useState() useContext() useReducer() redux
+// данные кот. приходят - fetch() внешний API
+// различные инструменты для работы с внешним
+// error, isLoading, isSubmitting, isSubmitted, isError
+// rtk query позволяет получить доступ к загрузке и ошибкам
+// позволяет нам хранить наши данные и запросы в одном месте
+// rtk отслеживает используя спец встроенные методы изменения в полученных с сервера данных
