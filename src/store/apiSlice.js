@@ -6,15 +6,26 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const productApi = createApi({
   reducerPath: 'products',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://dummyjson.com/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001' }),
+  tagTypes: ['PRODUCTS', 'USERS', 'COMMENTS'],
   endpoints: (builder) => ({
     getAllProducts: builder.query({
       query: () => 'products',
+      providesTags: ['PRODUCTS'], // по этому тегу производит рефетчинг данных
     }),
     getSingleProduct: builder.query({
       query: (id) => `products/${id}`,
     }),
+    addNewProduct: builder.mutation({
+      query: (product) => ({
+        url: '/products',
+        method: 'POST',
+        body: product,
+      }),
+      invalidatesTags: ['PRODUCTS'],
+    }),
   }),
 })
 
-export const { useGetAllProductsQuery, useGetSingleProductQuery } = productApi
+export const { useGetAllProductsQuery, useGetSingleProductQuery, useAddNewProductMutation } =
+  productApi

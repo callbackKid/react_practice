@@ -30,12 +30,12 @@ export const Header = () => {
           </li>
           <li>
             <NavLink
-              to="/posts"
+              to="/products"
               className={({ isActive, isPending }) =>
                 isPending ? classes.pending : isActive ? classes.active : ''
               }
             >
-              Posts
+              Products
             </NavLink>
           </li>
           <li>
