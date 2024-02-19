@@ -1,43 +1,36 @@
-import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import { useInput } from '../../hooks/useInput'
 
 // создать экшен которое будет добавлять новую туду в стейт редакса
 
 export const AddNewTodo = () => {
-  const [taskTitle, setTaskTitle] = useState('')
-  const [taskDescription, setTaskDescription] = useState('')
+  const { value, onChange, reset } = useInput('')
+  const {
+    value: taskDescription,
+    onChange: onChangeDescription,
+    reset: resetDescription,
+  } = useInput('')
 
   const handleAddTodo = (event) => {
     event.preventDefault()
     const newTodo = {
-      taskTitle,
+      taskTitle: value,
       taskDescription,
       id: uuidv4(),
     }
     console.log(newTodo)
 
-    setTaskTitle('')
-    setTaskDescription('')
+    reset()
+    resetDescription()
   }
   return (
     <form onSubmit={handleAddTodo}>
       <label htmlFor="title"></label>
-      <input
-        type="text"
-        id="title"
-        value={taskTitle}
-        onChange={(event) => setTaskTitle(event.target.value)}
-      />
-      <p>{taskTitle}</p>
+      <input type="text" id="title" value={value} onChange={onChange} />
 
       <label htmlFor="description"></label>
-      <input
-        type="text"
-        id="description"
-        value={taskDescription}
-        onChange={(event) => setTaskDescription(event.target.value)}
-      />
-      <p>{taskDescription}</p>
+      <input type="text" id="description" value={taskDescription} onChange={onChangeDescription} />
+
       <button type="submit">Add Todo</button>
     </form>
   )
