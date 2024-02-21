@@ -48,6 +48,16 @@ export const Header = () => {
               Users
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/cart"
+              className={({ isActive, isPending }) =>
+                isPending ? classes.pending : isActive ? classes.active : ''
+              }
+            >
+              Cart
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
