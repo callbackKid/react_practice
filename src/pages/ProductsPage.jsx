@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux'
+import AddNewProduct from '../components/AddNewProduct/AddNewProduct'
 import { FilterBar } from '../components/FilterBar/Filterbar'
 import { Product } from '../components/Product/Product'
 import { useFiltarion } from '../hooks/useFiltration'
@@ -12,6 +13,7 @@ const ProductsPage = () => {
   return (
     <main>
       <FilterBar />
+      <AddNewProduct />
       {isLoading ? (
         <h1>ПОЛУЧАЕМ ДАННЫЕ</h1>
       ) : (
