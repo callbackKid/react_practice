@@ -12,7 +12,6 @@ export default function CustomizedDialogs({ open, handleClose }) {
         <IconButton aria-label="close" onClick={handleClose}>
           <CloseIcon />
         </IconButton>
-
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
             Save changes
