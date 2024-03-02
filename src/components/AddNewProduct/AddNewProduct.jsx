@@ -1,3 +1,6 @@
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import TextField from '@mui/material/TextField'
 import { useState } from 'react'
 import CustomizedDialogs from '../../UI/Modal/Modal'
 import { useAddNewProductMutation } from '../../store/apiSlice'
@@ -33,32 +36,47 @@ const AddNewProduct = () => {
     setOpen(true)
   }
 
+  const error = {
+    message: 'OUPS',
+  }
   return (
     <>
-      <form onSubmit={handleAddPost}>
-        <label>
-          Title
-          <input
-            type="text"
-            id="title"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-          />
-        </label>
-        <label>
-          price
-          <input
-            type="number"
-            id="price"
-            value={price}
-            onChange={(event) => setPrice(event.target.value)}
-          />
-        </label>
-        <button type="submit">Add Post</button>
+      <Box
+        component="form"
+        onSubmit={handleAddPost}
+        sx={{
+          margin: '10px',
+          display: 'flex',
+          flexDirection: 'column',
+          width: '250px',
+          gap: '10px',
+        }}
+      >
+        <TextField
+          type="text"
+          id="title"
+          label="Title"
+          value={title}
+          error={true}
+          helperText={error ? error.message : null}
+          onChange={(event) => setTitle(event.target.value)}
+        />
+
+        <TextField
+          type="number"
+          id="price"
+          value={price}
+          label="Price"
+          onChange={(event) => setPrice(event.target.value)}
+        />
+
+        <Button variant="outlined" type="submit">
+          Add Product
+        </Button>
         {isLoading ? <h1>Обработка результата</h1> : null}
         {isSuccess ? <h1>Данные успешно отправлены</h1> : null}
         {isError ? <h1>Ошибка отправления</h1> : null}
-      </form>
+      </Box>
       <CustomizedDialogs open={open} handleClose={handleClose} />
     </>
   )

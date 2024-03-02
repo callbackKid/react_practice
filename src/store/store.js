@@ -18,7 +18,8 @@ import themeReducer from './themeSlice'
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['navigation'],
+  whitelist: ['cart'],
+  blackList: [[productApi.reducerPath]],
 }
 
 const rootReducer = combineReducers({

@@ -1,0 +1,19 @@
+* {
+  color: #ffffff;
+  background: #000000;
+}
+
+#root.dark > * > * {
+  color: black;
+  background: #ffffff;
+}
+#root > div > header > button {
+  color: #ffffff;
+  background: #000000;
+}
+
+#root
+  > div
+  > button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedError.MuiButton-sizeLarge.MuiButton-containedSizeLarge.MuiButton-root.MuiButton-contained.MuiButton-containedError.MuiButton-sizeLarge.MuiButton-containedSizeLarge.css-1i749hr-MuiButtonBase-root-MuiButton-root {
+  color: black;
+}
